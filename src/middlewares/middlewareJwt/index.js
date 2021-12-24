@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { promisify } = require('util')
+const { promisify } = require('util');
 const secretKey = require('../../secret');
 
 exports.middlewareJwt = async (request, response, next) => {
@@ -10,7 +10,7 @@ exports.middlewareJwt = async (request, response, next) => {
 	const token = authorization.replace('Bearer', '').trim();
 
 	try {
-		await promisify(jwt.verify)(token, secretKey)
+		await promisify(jwt.verify)(token, secretKey);
 
 		return next();
 	} catch (err) {

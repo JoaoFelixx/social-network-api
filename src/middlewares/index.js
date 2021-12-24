@@ -1,5 +1,5 @@
 const { middlewareCors } = require('./middlewareCors');
-const { middlewareJwt } = require('./middlewareJwt')
+const { middlewareJwt } = require('./middlewareJwt');
 
 module.exports = {
   middlewareCors,
