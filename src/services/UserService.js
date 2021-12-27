@@ -11,8 +11,8 @@ class UserService {
     return await userRepository.delete(_id);
   }
 
-  static async update({ _id, user }) {
-    return await userRepository.update({_id, user});
+  static async update(user) {
+    return await userRepository.update(user);
   }
   
   static async getUserById(_id) {

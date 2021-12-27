@@ -29,11 +29,11 @@ class UserRepository {
     }
   }
 
-  async update({ _id, user }) {
+  async update(user) {
     try {
       const { email, nickname, password } = user;
 
-      const oldUser = await Users.findByPk(_id);
+      const oldUser = await Users.findByPk(user._id);
 
       oldUser.email = email;
       oldUser.nickname = nickname;
