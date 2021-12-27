@@ -8,10 +8,6 @@ class UserEntity {
     this.nickname = nickname.toLowerCase();
     this.password = bcrypt.hashSync(password, 8)
   }
-
-  isValidUser() {
-
-  } 
 }
 
 module.exports = UserEntity;
