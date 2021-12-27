@@ -10,14 +10,15 @@ const {
 
 router.post('/users', createUserController);
 
-router.use(middlewareJwt);
+router.delete('/users/:_id', deleteUserController);
+
+//router.use(middlewareJwt);
 
 router.get('/users/:_id', getUserByIdController);
 
 router.post('/messages', sendMessageController);
 
-router.put('/users', updateUserController);
+router.put('/users/:_id', updateUserController);
 
-router.delete('/users', deleteUserController);
 
 module.exports = router;

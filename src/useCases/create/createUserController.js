@@ -20,7 +20,7 @@ async function createUserController(request, response) {
     return response.sendStatus(201);
 
   } catch (err) {
-    return response.status(409).json({ result: err });
+    return response.sendStatus(409);
   }
 }
 
