@@ -6,7 +6,6 @@ const {
 	deleteUserController,
 	sendMessageController,
 	getUserByIdController,
-	getUserByNicknameController,
 } = require('./useCases');
 
 router.post('/users', createUserController);
@@ -14,7 +13,6 @@ router.post('/users', createUserController);
 router.use(middlewareJwt);
 
 router.get('/users/:_id', getUserByIdController);
-router.get('/users/:nickname', getUserByNicknameController);
 
 router.post('/messages', sendMessageController);
 

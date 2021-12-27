@@ -7,7 +7,7 @@ class UserRepository {
       return await Users.create(user);
 
     } catch (err) {
-      console.error(err);
+      throw new Error(err);
     }
   }
 
@@ -16,7 +16,7 @@ class UserRepository {
       return await Users.destroy({ where: { _id } });
 
     } catch (err) {
-      console.error(err);
+      throw new Error(err)
     }
   }
 
@@ -25,7 +25,7 @@ class UserRepository {
       return await Users.findByPk(_id);
 
     } catch (err) {
-      console.error(err);
+      throw new Error(err)
     }
   }
 
@@ -42,7 +42,7 @@ class UserRepository {
       return await oldUser.save();
 
     } catch (err) {
-      console.error(err);
+      throw new Error(err)
     }
   }
 
@@ -51,7 +51,16 @@ class UserRepository {
       return await Users.findOne({ where: { nickname } });
 
     } catch (err) {
-      console.error(err);
+      throw new Error(err)
+    }
+  }
+
+  async existsEmail(email) {
+    try {
+      return await Users.findOne({ where: { email } });
+
+    } catch (err) {
+      throw new Error(err)
     }
   }
 }

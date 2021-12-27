@@ -22,6 +22,10 @@ class UserService {
   static async existsNickname(nickname) {
     return await userRepository.existsNickname(nickname);
   }
+
+  static async existsEmail(email) {
+    return await userRepository.existsEmail(email);
+  }
 }
 
 module.exports = UserService;

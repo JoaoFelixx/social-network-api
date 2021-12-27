@@ -4,7 +4,7 @@ const { postgres } = require('./connections');
 const { middlewareCors } = require('./middlewares');
 
 const app = express();
-const PORT = 4000;
+const PORT = 5000;
 
 app.use(express.json());
 app.use(middlewareCors);
