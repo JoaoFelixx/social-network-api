@@ -1,5 +1,5 @@
-const getUserByIdController = require('./getUserById');
+const getUserByIdController = require('./getUserByIdController');
 
-module.exports = {
+module.exports = { 
   getUserByIdController,
 }

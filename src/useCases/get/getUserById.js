@@ -1,4 +1,4 @@
-const { UserService } = require('../../../services')
+const { UserService } = require('../../services')
 
 async function getUserById(_id) {
 
