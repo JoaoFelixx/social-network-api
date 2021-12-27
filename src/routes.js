@@ -10,7 +10,7 @@ const {
 
 router.post('/users', createUserController);
 
-router.use(middlewareJwt);
+//router.use(middlewareJwt);
 
 router.get('/users/:_id', getUserByIdController);
 
