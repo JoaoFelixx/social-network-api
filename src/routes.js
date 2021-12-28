@@ -5,18 +5,15 @@ const {
 	updateUserController,
 	createUserController,
 	deleteUserController,
-	sendMessageController,
 	getUserByIdController,
 } = require('./useCases');
 
 router.post('/users', createUserController);
 router.post('/auth', authUserController)
 
-//router.use(middlewareJwt);
+router.use(middlewareJwt);
 
 router.get('/users/:_id', getUserByIdController);
-
-router.post('/messages', sendMessageController);
 
 router.put('/users/:_id', updateUserController);
 
