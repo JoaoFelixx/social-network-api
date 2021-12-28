@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { middlewareJwt } = require('./middlewares');
 const {
+	authUserController,
 	updateUserController,
 	createUserController,
 	deleteUserController,
@@ -9,6 +10,7 @@ const {
 } = require('./useCases');
 
 router.post('/users', createUserController);
+router.post('/auth', authUserController)
 
 //router.use(middlewareJwt);
 
