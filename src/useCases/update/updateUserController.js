@@ -22,15 +22,14 @@ async function updateUserController(request, response) {
 
     if (!regexNickname.test(user.nickname)) return response.status(400).json({ result: 'Nickname is invalid' })
 
-    const result = await updateUser(user);
+    const userExists = await updateUser(user);
 
-    if (typeof result == 'object') return response.status(400).json({ result: result.join(',') });
+    if (!userExists) return response.status(400).json({ result: 'Id is not registered' })
 
     return response.sendStatus(202)
 
   } catch (err) {
-    console.log(err)
-    return response.sendStatus(409)
+    return response.status(409).json({ result: 'Email or/and nickname already exists' });
   }
 }
 
