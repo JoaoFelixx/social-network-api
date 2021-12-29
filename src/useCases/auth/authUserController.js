@@ -1,5 +1,5 @@
-const authUser = require('./authUser');
 const bcrypt = require('bcryptjs');
+const authUser = require('./authUser');
 const { UserService } = require('../../services');
 
 async function authUserController(request, response) {
@@ -18,10 +18,9 @@ async function authUserController(request, response) {
 
     const token = await authUser(userExists._id);
 
-    return response.status(201).json({ user: userExists, token })
+    return response.status(201).json({ user: userExists, token });
 
   } catch (err) {
-    console.log(err)
     return response.sendStatus(409);
   }
 }

@@ -1,8 +1,8 @@
-const { UserService } = require('../../services')
+const { UserService } = require('../../services');
 
 async function deleteUser(_id) {
   try {
-    const userExists = await UserService.getUserById(_id)
+    const userExists = await UserService.getUserById(_id);
 
     if (!userExists) return false;
 

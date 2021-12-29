@@ -9,7 +9,7 @@ const {
 } = require('./useCases');
 
 router.post('/users', createUserController);
-router.post('/auth', authUserController)
+router.post('/auth', authUserController);
 
 router.use(middlewareJwt);
 

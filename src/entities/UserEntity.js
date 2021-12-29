@@ -6,7 +6,7 @@ class UserEntity {
     this._id = !_id ? uuid() : _id;
     this.email = email.toLowerCase();
     this.nickname = nickname.toLowerCase();
-    this.password = bcrypt.hashSync(password, 8)
+    this.password = bcrypt.hashSync(password, 8);
   }
 }
 

@@ -1,32 +1,25 @@
 const { Users } = require('../models');
 
 class UserRepository {
+  
+  async getUserById(_id) {
+    return await Users.findByPk(_id);
+  }
+  
+  async getByNickname(nickname) {
+    return await Users.findOne({ where: { nickname } });
+  }
 
+  async getByEmail(email) {
+    return await Users.findOne({ where: { email } });
+  }
+  
   async create(user) {
-    try {
-      return await Users.create(user);
-
-    } catch (err) {
-      throw new Error(err);
-    }
+    return await Users.create(user);
   }
 
   async delete(_id) {
-    try {
-      return await Users.destroy({ where: { _id } });
-
-    } catch (err) {
-      throw new Error(err)
-    }
-  }
-
-  async getUserById(_id) {
-    try {
-      return await Users.findByPk(_id);
-
-    } catch (err) {
-      throw new Error(err)
-    }
+    return await Users.destroy({ where: { _id } });
   }
 
   async update(user) {
@@ -40,24 +33,6 @@ class UserRepository {
       oldUser.password = password;
 
       return await oldUser.save();
-
-    } catch (err) {
-      throw new Error(err)
-    }
-  }
-
-  async existsNickname(nickname) {
-    try {
-      return await Users.findOne({ where: { nickname } });
-
-    } catch (err) {
-      throw new Error(err)
-    }
-  }
-
-  async existsEmail(email) {
-    try {
-      return await Users.findOne({ where: { email } });
 
     } catch (err) {
       throw new Error(err)

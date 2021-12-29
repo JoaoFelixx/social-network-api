@@ -24,9 +24,9 @@ async function updateUserController(request, response) {
 
     const userExists = await updateUser(user);
 
-    if (!userExists) return response.status(400).json({ result: 'Id is not registered' })
+    if (!userExists) return response.status(400).json({ result: 'Id is not registered' });
 
-    return response.sendStatus(202)
+    return response.sendStatus(202);
 
   } catch (err) {
     return response.status(409).json({ result: 'Email or/and nickname already exists' });

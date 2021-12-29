@@ -1,4 +1,4 @@
-const { UserEntity } = require('../../entities')
+const { UserEntity } = require('../../entities');
 const createUser = require('./createUser');
 
 async function createUserController(request, response) {
@@ -20,9 +20,9 @@ async function createUserController(request, response) {
 
     if (!regexNickname.test(user.nickname)) return response.status(400).json({ result: 'Nickname is invalid' });
 
-    const result = await createUser(user);
+    const { hasError, errors } = await createUser(user);
 
-    if (typeof result == 'object') return response.status(400).json({ result: result.join(',') });
+    if (hasError) return response.status(400).json({ result: errors.join(',') });
     
     return response.sendStatus(201);
 

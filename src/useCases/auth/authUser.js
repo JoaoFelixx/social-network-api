@@ -1,5 +1,5 @@
-const { promisify } = require('util')
 const jwt = require('jsonwebtoken');
+const { promisify } = require('util');
 const { SECRET_KEY_JWT } = require('../../secret');
 
 async function authUser(_id) {
@@ -9,7 +9,7 @@ async function authUser(_id) {
     return await token;
     
   } catch (err) {
-    throw new Error(err)
+    throw new Error(err);
   } 
 } 
 

@@ -1,5 +1,5 @@
-const { UserEntity } = require('../../entities')
-const deleteUser = require('./deleteUser')
+const { UserEntity } = require('../../entities');
+const deleteUser = require('./deleteUser');
 
 async function deleteUserController(request, response) {
   try {
@@ -9,7 +9,7 @@ async function deleteUserController(request, response) {
 
     if (!userHasBeenDeleted) return response.sendStatus(204);
 
-    return response.sendStatus(202)
+    return response.sendStatus(202);
   } catch (err) {
     return response.sendStatus(409);
   }
