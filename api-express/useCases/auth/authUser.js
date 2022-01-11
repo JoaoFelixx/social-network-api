@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { promisify } = require('util');
-const { SECRET_KEY_JWT } = require('../../secret');
+const { SECRET_KEY_JWT } = require('../../../secret');
 
 async function authUser(_id) {
   try {

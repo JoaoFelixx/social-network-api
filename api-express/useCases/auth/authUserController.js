@@ -8,6 +8,8 @@ async function authUserController(request, response) {
 
     const userExists = await UserService.existsEmail(email);  
     
+    console.log(userExists)
+
     if (!userExists) return response.sendStatus(204);
 
     const passwordIsCorrect = await bcrypt.compare(password, userExists.password);

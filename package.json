@@ -5,7 +5,8 @@
   "author": "João Felix",
   "license": "MIT",
   "scripts": {
-    "start": "node src/app",
+    "startApi": "node api-express/app",
+    "startSocket": "node socket-communication/app",
     "dev": "nodemon src/app"
   },
   "dependencies": {

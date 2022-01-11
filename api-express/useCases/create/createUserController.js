@@ -31,6 +31,7 @@ async function createUserController(request, response) {
     return response.sendStatus(201);
 
   } catch (err) {
+    console.log(err)
     return response.sendStatus(409);
   }
 }

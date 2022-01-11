@@ -20,11 +20,11 @@ class UserService {
   }
 
   static async existsNickname(nickname) {
-    return await userRepository.existsNickname(nickname);
+    return await userRepository.getByNickname(nickname);
   }
 
   static async existsEmail(email) {
-    return await userRepository.existsEmail(email);
+    return await userRepository.getByEmail(email);
   }
 }
 
