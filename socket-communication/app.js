@@ -4,7 +4,7 @@ const { createServer } = require('http');
 const { SECRET_KEY_JWT } = require('../secret');
 const jwt = require('jsonwebtoken');
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const app = express();
 const server = createServer(app);
 const io = new Server(server, {
@@ -14,7 +14,7 @@ const io = new Server(server, {
   }
 });
 
-io.use((socket, next) => {
+io.use((socket, next) => { // Autenticação, pode apagar para testar apenas o socket
   try {
     if (!socket.handshake.query || !socket.handshake.query.token)
       return next(new Error('Authentication error'));
@@ -26,8 +26,8 @@ io.use((socket, next) => {
 
       next();
     });
+
   } catch (err) {
-    console.error(err)
     next(new Error('Authentication error'));
   }
 })

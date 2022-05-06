@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "startApi": "node api-express/app",
-    "startSocket": "node socket-communication/app",
-    "dev": "nodemon src/app"
+    "startSocket": "node ./socket-communication/app",
+    "dev": "npx nodemon ./socket-communication/app"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
